@@ -1,1 +1,12 @@
+#area-mensagens{
+    border: 1px green;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
 
+.destaque{
+    color: red;
+    text-transform: uppercase;
+}

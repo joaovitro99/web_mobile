@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <script src="javascript/bootstrap/bootstrap.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/jquery.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Barra de Pesquisa</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExample" class="carousel slide" style="width: 20vw; height: 40vh; margin: auto; display: flex; align-items: center; justify-content: center;">
+        <div class="carousel-inner" style="width: 100%; height: 100%;">
+            <div class="carousel-item active">
+                <img src="img/logo1.png" class="d-block w-100" alt="..." style="height: 100%; object-fit:fill;">
+            </div>
+            <div class="carousel-item">
+                <img src="img/logo2.png" class="d-block w-100" alt="..." style="height: 100%; object-fit: fill;">
+            </div>
+            <div class="carousel-item">
+                <img src="img/logo3.png" class="d-block w-100" alt="..." style="height: 100%; object-fit: fill;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+    
+
+    <div class="card" style="width: 18rem;">
+        <img src="img/img.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Brasão do Brasil</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+
+    <form class="mb-4" style="width: 20vw; height: 40vh;">
+      <div class="col-auto">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="col-auto">
+        <label for="inputPassword2" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+      </div>
+      <label for="customRange2" class="form-label">Idade: <span id="rangeValue">18</span></label>
+      <input type="range" class="form-range" min="18" max="24" id="customRange2" oninput="document.getElementById('rangeValue').textContent = this.value;">
+
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
+      </div>
+    </form>
+    
+
+
+    
+</body>
+</html>
