@@ -1,0 +1,55 @@
+html, body{
+    height:100%;
+}
+.formulario{
+    max-width: 350px;
+    padding: 1rem;
+    margin: 1px green;
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.list-group-item {
+    border: none; 
+    padding: 0; 
+    margin-bottom: 0; 
+    background-color: transparent; 
+}
+
+.vehicle-card {
+    width: 200px; 
+    height: 200px; 
+    border: 2px solid green; 
+    border-radius: 10px; 
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    background-color: #f9f9f9; 
+}
+
+.brand-model {
+    margin-bottom: 10px; /* Espaço entre marca/modelo e os detalhes */
+}
+
+.brand {
+    font-size: 1.5em; /* Marca maior */
+    font-weight: bold;
+}
+
+.model {
+    font-size: 1.2em; /* Modelo um pouco menor que a marca, mas ainda grande */
+}
+
+.details {
+    font-size: 0.9em;
+}
