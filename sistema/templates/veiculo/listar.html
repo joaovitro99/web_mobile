@@ -1,63 +1,37 @@
+{% extends base_html %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar carros</title>
+{% block titulo %} Listagem de veiculos {% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-primary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-              <img src="{% static 'img/download.png' %}" width="70" height="70"/>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Listagem</a>
-                  </li>
-                </ul>           
-              </div>
-            </div>
-        </nav>
-    </header>
 
-    <div class="input-group mb-3">
+{% block conteudo %}
+
+<div class="row justify-content-center">
+    <div class="input-group mb-3 w-50">
         <input type="text" class="form-control" placeholder="Pesquise um carro especifico" aria-label="Pesquise um carro especifico" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Pesquisar</button>
     </div>
+</div>
 
-    {{veiculos|length}} veiculo(s)
-    
-    <ul class="list-group">
-        {% for veiculo in veiculos %}
-        <li class="list-group-item">
-            <div class="vehicle-card">
-                <div class="brand-model">
-                    <div class="brand">{{veiculo.get_marca_display}}</div>
-                    <div class="model">{{veiculo.modelo}}</div>
-                </div>
-                <div class="details">
-                    <div class="row">Ano: {{veiculo.ano}}</div>
-                    <div class="row">Cor: {{veiculo.get__display}}<cor/div>
-                    <div class="row">Combustível: {{veiculo.get_combustivel_display}}</div>
-                </div>
+{{ veiculos|length }} veiculo(s)
+
+<ul class="list-group">
+    {% for veiculo in veiculos %}
+    <li class="list-group-item">
+        <div class="vehicle-card">
+            <div class="brand-model">
+                <div class="brand">{{ veiculo.get_marca_display }}</div>
+                <div class="model">{{ veiculo.modelo }}</div>
             </div>
-        </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+            <div class="details">
+                <div class="row">Ano: {{ veiculo.ano }}</div>
+                <div class="row">Cor: {{ veiculo.get_cor_display }}</div>
+                <div class="row">Combustível: {{ veiculo.get_combustivel_display }}</div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+

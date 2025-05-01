@@ -1,26 +1,14 @@
+{% extends base_html %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+{% block titulo %} Login {% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-</head>
-<body class="d-flex align-items-center py-4 ">
-    
+
+
+{% block conteudo %}
+<div class="d-flex align-items-center py-4 ">
     <main class="w-100 m-auto formulario">
-        
-        <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
-            <img src="{% static 'img/download.png' %}" height="50" width="50" alt="Logo">
-            <h3 class="mb-0">Aluguel de Carros</h3>
-        </div>
-
-        <form action="/" method="post">
+    
+        <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             <h1 class="h3 mb-3 fw-normal">Faça o Login</h1>
             <div class="form-floating">
@@ -38,7 +26,5 @@
             <button class="btn btn-primary w-100 py-2">Entrar</button>
         </form>
     </main>
-    
-    
-</body>
-</html>
+</div>
+{% endblock %}
