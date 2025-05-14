@@ -18,16 +18,26 @@
     {% for veiculo in veiculos %}
     <li class="list-group-item">
         <div class="vehicle-card">
-            <div class="brand-model">
-                <div class="brand">{{ veiculo.get_marca_display }}</div>
-                <div class="model">{{ veiculo.modelo }}</div>
-            </div>
-            <div class="details">
-                <div class="row">Ano: {{ veiculo.ano }}</div>
-                <div class="row">Cor: {{ veiculo.get_cor_display }}</div>
-                <div class="row">Combustível: {{ veiculo.get_combustivel_display }}</div>
-            </div>
+    {% if veiculo.foto %}
+        <img src="{{ veiculo.foto.url }}" class="card-img-top vehicle-image" alt="{{ veiculo.get_marca_display }} {{ veiculo.modelo }}">
+    {% else %}
+        <div class="vehicle-image-placeholder">Sem foto</div>
+    {% endif %}
+    <div class="vehicle-info">
+        <div class="brand-model">
+            <div class="brand">{{ veiculo.get_marca_display }}</div>
+            <div class="model">{{ veiculo.modelo }}</div>
         </div>
+        <div class="details">
+            <div class="row">Ano: {{ veiculo.ano }}</div>
+            <div class="row">Cor: {{ veiculo.get_cor_display }}</div>
+            <div class="row">Combustível: {{ veiculo.get_combustivel_display }}</div>
+        </div>
+        <a href="{% url 'editar-veiculos' veiculo.pk %}" class="btn btn-primary">Editar</a>
+        <a href="{% url 'deletar-veiculos' veiculo.pk %}" class="btn btn-danger">Deletar</a>
+    </div>
+</div>
+
     </li>
     {% endfor %}
 </ul>
