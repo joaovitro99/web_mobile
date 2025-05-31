@@ -6,6 +6,10 @@ from django.views.generic import ListView,CreateView,View,UpdateView,DeleteView
 from django.http import FileResponse,Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.mixins import LoginRequiredMixin
+from rest_framework.generics import ListAPIView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework import permissions
+from veiculo.serializers import SerializadorVeiculo
 # Create your views here.
 class ListarVeiculos(LoginRequiredMixin, ListView):
     model = Veiculo 
@@ -59,3 +63,10 @@ class FotoVeiculo(View):
         except Exception as exception:
             raise exception
 
+class APIListarVeiculos(ListAPIView):
+    serializer_class = SerializadorVeiculo
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Veiculo.objects.all()
